@@ -1,0 +1,504 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,600&family=League+Spartan:wght@700&family=Lobster&family=Montserrat&family=Noto+Serif:wght@700&family=Tapestry&display=swap" rel="stylesheet">
+    <title>Big Boss Voting Zone</title>
+    <style>
+
+        
+
+        body{
+            background: url(backgroundDoodle3.jpg);
+            color: white;
+        }
+        .main {
+            margin-left: 50px;
+            text-align: center;
+            display: grid;
+            grid: auto / auto auto auto;
+            grid-template-columns: repeat(3, 1fr); 
+        }
+
+        .container {
+            background-color: white;
+            color: black;
+            height: fit-content;
+            width: 280px;
+            margin: 50px;
+            margin-top: 70px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .heading , .text{
+            margin: 20px;
+        }
+        .heading{
+            font-family: Montserrat;
+        }
+
+        .imagehd{
+            width: 280px;
+        }
+
+        .voteButton{
+            padding: 10px 15px 10px 15px;
+            background-color: rgb(0, 0, 0);
+            margin: 20px;
+            border-radius: 10px;
+            color: rgb(4, 255, 0);
+            text-align: center;
+            cursor: pointer;
+            font-family: Montserrat;
+        }
+
+        #containervote {
+            font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: auto;
+        margin-top: 70px;
+        margin-bottom: 70px;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+      }
+
+        #lastContainer {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: auto;
+        margin-top: 70px;
+        padding: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        text-align: center;
+        color: black;
+        margin-top: 0;
+        margin-bottom: 40px;
+        font-family: Montserrat;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: 1fr 1fr  ;
+        gap: 20px;
+        color: black;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 10px;
+        margin-left: 15px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        margin-bottom: 20px;
+      }
+
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .inputs{
+        margin-left: -30px;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      #submit{
+        text-align: center;
+        background-color: rgb(11, 239, 11);
+        padding: 12px;
+        color: black;
+        border-radius: 10px;
+        width: 30%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -10px;
+        cursor: pointer;
+      }
+
+      .progress-bar {
+        width: 80%;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: relative;
+        height: 20px;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        }
+
+        .progress {
+            color: black;
+        height: 100%;
+        background-color: #10f118;
+        border-radius: 5px;
+        transition: width 0.5s ease-in-out;
+        }
+
+        nav{
+            display: flex;
+            flex-direction: row;
+            margin-top: 30px;
+            margin-left: 20px;
+            font-size: 25px;
+            font-family: Montserrat;
+        }
+        
+        a{
+            color: white;
+            text-decoration: none;
+            justify-content: left;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 50px;
+            
+        }
+
+        a:hover{
+            /* text-decoration: underline; */
+            text-shadow: 5px 5px 10px rgb(0, 255, 4);
+            transition-property: background-color, width, height , text-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        a:not(:hover){
+            transition-property: background-color, width, height , text-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        .thanks{
+            font-size: 25px;
+            font-family: Montserrat;
+            color: black;
+            text-align: center;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .mainthanks{
+            color: #0226c6;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #continueButton{
+            background-color: black;
+            color: #10f118;
+            width: 40%;
+            text-align: center;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: Montserrat;
+            cursor: pointer;
+        }
+
+
+    </style>
+  </head>
+  <body>
+
+    <nav>
+        <div><a href="BiggBoss.html">Voting Panel</a></div>
+        <div><a href="guidelines.html">Guidelines</a></div>
+        <div><a href="">About the Platform</a></div>
+    </nav>
+    
+    <div id="main" class="main">
+        <div id="container" class="container">
+        <img class="imagehd"  src="nimrit kaur2.jpeg" />
+
+        <h2 class="heading">Nimrit Kaur</h2>
+
+        <p class="text">
+            Nimrit Kaur Ahluwalia, known professionally as Nimrit Ahluwalia, is an Indian actress who primarily works in Hindi television. Ahluwalia won Femina Miss Manipur and was among the top 12 of Femina Miss India 2018
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 57%"> 11385 </div>
+        </div>
+        <div id="voteNimrit" onclick="redirectFunction('Nimrit Kaur')" class="voteButton">
+            Vote Nimrit Kaur
+        </div>
+    </div>
+        
+
+        <div class="container">
+        <img class="imagehd"  src="abdu.jpg" />
+        
+        <h2 class="heading">Abdu Rozik</h2>
+        
+        <p class="text">
+            Muhammadroziqi Savriqul, known professionally as Abdu Rozik, is a Tajikistani singer.Rozik participated in the Indian reality show Bigg Boss 16 on Colors TV. Rozik has dwarfism caused by an untreated case of childhood rickets.
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 21%"> 4568 </div>
+        </div>
+        <div id="voteAbdu" onclick="redirectFunction('Abdu Rozik')"  class="voteButton">
+            Vote Abdu Rozik
+        </div>
+    </div>
+
+        
+        
+        <div class="container">
+        <img class="imagehd" src="ankitgupta2.jpg" />
+        
+        <h2 class="heading">Ankit Gupta</h2>
+        
+        <p class="text">
+            Ankit Gupta is an Indian actor who is known for working in Hindi television. He is best known for his role as Fateh Singh Virk in Colors TV's Udaariyaan. In 2022, he appeared in Bigg Boss 16 as a contestant.
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 36%"> 6259 </div>
+        </div>
+        <div id="voteAnkit" onclick="redirectFunction('Ankit Gupta')"  class="voteButton">
+            Vote Ankit Gupta
+        </div>
+    </div>
+
+        <div class="container">
+        <img class="imagehd"  src="priyanka2.jpg" />
+        
+        <h2 class="heading">Priyanka</h2>
+        
+        <p class="text">
+            Priyanka Chahar Choudhary was born on 13 August 1996 in Jaipur, Rajasthan, India. She is an actress, known for Udaariyaan (2021) and Gathbandhan (2019)
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 45%"> 7925 </div>
+        </div>
+        <div id="votePriyanka" onclick="redirectFunction('Priyanka Chaudhary')" class="voteButton">
+            Vote Priyanka
+        </div>
+    </div>
+
+        <div class="container">
+            <img class="imagehd"  src="MC-Stan2.jpg" />
+            
+            <h2 class="heading">MC Stan</h2>
+            
+            <p class="text">
+                MC Stan is a well-known rapper who has dominated the Internet with his incredible rhymes. His tunes are really popular among indian chhapri teens.
+            </p>
+            <div class="progress-bar">
+                <div  id="MC Stan" class="progress" style="width: 18%"> 4142 </div>
+            </div>
+            <div id="voteMc" onclick="redirectFunction('MC Stan')" class="voteButton">
+                Vote MC Stan
+            </div>
+        </div>
+
+
+        <div class="container">
+            <img class="imagehd"  src="tinadatta.jpg" />
+            
+            <h2 class="heading">Tina Datta</h2>
+            
+            <p class="text">
+                Tina Datta is an Indian actress known for her work in Hindi television. She rose to fame after portraying Ichcha in the drama series Uttaran.
+            </p>
+            <div class="progress-bar">
+                <div  id="Tina Datta" class="progress" style="width: 30%"> 5526 </div>
+            </div>
+            <div id="voteMc" onclick="redirectFunction('Tina Datta')" class="voteButton">
+                Vote Tina Datta
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <img class="imagehd"  src="manya singh.jpeg" />
+            
+            <h2 class="heading">Manya Singh</h2>
+            
+            <p class="text">
+                Manya Singh, the first runner-up in the Miss India 2020 contest, triumphed over the other candidates. She's a girl with beauty and brain.
+            </p>
+            <div class="progress-bar">
+                <div  id="Manya Singh" class="progress" style="width: 54%"> 10585 </div>
+            </div>
+            <div id="voteMc" onclick="redirectFunction('Manya Singh')" class="voteButton">
+                Vote Manya Singh
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <img class="imagehd"  src="Archana-Gautam.jpg" />
+            
+            <h2 class="heading">Archana Gautam</h2>
+            
+            <p class="text">
+                Archana Gautam is an Indian politician, actress, model and beauty pageant title holder, who won Miss Bikini India 2018 represented India at Miss Cosmos World 2018
+            </p>
+            <div class="progress-bar">
+                <div  id="Archana Gautam" class="progress" style="width: 42%"> 8258 </div>
+            </div>
+            <div id="voteMc" onclick="redirectFunction('Archana Gautam')" class="voteButton">
+                Vote Archana Gautam
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <div id="outerContainer"></div>
+    <div id="outerContainer2"></div>
+
+</body>
+<script>
+
+    
+    let container = document.getElementById("container");
+    let main = document.getElementById("main");
+    let outerContainer= document.getElementById("outerContainer");
+    let outerContainer2= document.getElementById("outerContainer2");
+    function redirectFunction(parameter){
+        let display = parameter;
+        main.style.display = "none";
+        outerContainer.style.display="inline";
+        outerContainer.innerHTML = `<div id="containervote">
+        <h1>Personal Information Form</h1>
+        <form id="personal-info-form">
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" class="inputs" name="first-name" required>
+          <!-- <div id="first-name-error" class="error-message"></div> -->
+  
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" class="inputs" name="last-name" required>
+          <!-- <div id="last-name-error" class="error-message"></div> -->
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" class="inputs" name="email" required>
+          <!-- <div id="email-error" class="error-message"></div> -->
+
+          <label for="phone">Phone:</label>
+        <input type="tel" id="phone" class="inputs" name="phone" required>
+        <!-- <div id="phone-error" class="error-message"></div> -->
+
+        <label for="city">City:</label>
+        <input type="text" id="city" class="inputs" name="city" required>
+        <!-- <div id="city-error" class="error-message"></div> -->
+
+        <label for="state">State:</label>
+        <select id="state" class="inputs" name="state" required>
+        <option value="">Select State</option>
+        <option value="Andhra Pradesh">Andhra Pradesh</option>
+        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+        <option value="Assam">Assam</option>
+        <option value="Bihar">Bihar</option>
+        <option value="Chhattisgarh">Chhattisgarh</option>
+        <option value="Goa">Goa</option>
+        <option value="Gujarat">Gujarat</option>
+        <option value="Haryana">Haryana</option>
+        <option value="Himachal Pradesh">Himachal Pradesh</option>
+        <option value="Jharkhand">Jharkhand</option>
+        <option value="Karnataka">Karnataka</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Madhya Pradesh">Madhya Pradesh</option>
+        <option value="Maharashtra">Maharashtra</option>
+        <option value="Manipur">Manipur</option>
+        <option value="Meghalaya">Meghalaya</option>
+        <option value="Mizoram">Mizoram</option>
+        <option value="Nagaland">Nagaland</option>
+        <option value="Odisha">Odisha</option>
+        <option value="Punjab">Punjab</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="Sikkim">Sikkim</option>
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Telangana">Telangana</option>
+        <option value="Tripura">Tripura</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="West Bengal">West Bengal</option>
+        </select>
+        <!-- <div id="state-error" class="error-message"></div> -->
+        
+        </form>
+        <div id="submit" onclick="redirect()" >
+            Vote ${display}
+        </div>
+    </div>`;
+        
+
+    }
+
+    
+    
+    function redirect(){
+        // let display = parameter;
+        outerContainer.style.display="none";
+        outerContainer2.style.display="inline"
+        outerContainer2.innerHTML = `<div id="containervote">
+        <div class='thanks mainthanks'>
+            Thanks for voting.
+        </div>
+        <div class='thanks'>
+            Your vote will be counted after verification of your details.
+        </div>
+        <div id='continueButton' onclick="redirect2()">
+            Continue to Voting Panel
+        </div>
+    </div>`;
+
+    
+    }
+    function redirect2(){
+        outerContainer2.style.display="none";
+        main.style.display = "grid";
+
+    }
+
+
+    
+
+    
+
+</script>
+</html>
