@@ -33,6 +33,16 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
+        .containernew {
+            background-color: white;
+            color: black;
+            height: 550px;
+            width: 280px;
+            margin: 50px;
+            margin-top: 70px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
         .heading , .text{
             margin: 20px;
         }
@@ -54,9 +64,20 @@
             cursor: pointer;
             font-family: Montserrat;
         }
+        
+        .voteButton2{
+            padding: 10px 15px 10px 15px;
+            background-color: rgb(87, 85, 85);
+            margin: 20px;
+            border-radius: 10px;
+            color: rgb(4, 255, 0);
+            text-align: center;
+            cursor: pointer;
+            font-family: Montserrat;
+        }
 
         #containervote {
-            font-family: Arial, sans-serif;
+        font-family: Arial, sans-serif;
         max-width: 600px;
         margin: auto;
         margin-top: 70px;
@@ -106,7 +127,8 @@
 
       input[type="text"],
       input[type="email"],
-      input[type="tel"],
+      input[type="number"],
+      input[type='password'],
       select {
         width: 100%;
         padding: 10px;
@@ -171,34 +193,46 @@
         }
 
         nav{
-            display: flex;
-            flex-direction: row;
+            margin-left: 80px;
+            margin-right: 80px;
             margin-top: 30px;
-            margin-left: 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr 2fr ;
+
+
+            /* flex-direction: row;
+            margin-top: 30px;
+            margin-left: 20px; */
             font-size: 25px;
             font-family: Montserrat;
         }
+
+        #adminbutton{
+            text-align: end;
+            cursor: pointer;
+        }
+
         
         a{
-            color: white;
+            color: #10f118;
             text-decoration: none;
             justify-content: left;
             padding: 10px;
             border-radius: 5px;
-            margin: 50px;
             
         }
 
         a:hover{
             /* text-decoration: underline; */
-            text-shadow: 5px 5px 10px rgb(0, 255, 4);
-            transition-property: background-color, width, height , text-shadow;
+            text-shadow: 5px 5px 10px rgb(2, 255, 44);
+            color: #eaff04;
+            transition-property: background-color,color, width, height , text-shadow;
             transition-duration: 0.5s;
             transition-timing-function: ease;
         }
 
         a:not(:hover){
-            transition-property: background-color, width, height , text-shadow;
+            transition-property: background-color,color, width, height , text-shadow;
             transition-duration: 0.5s;
             transition-timing-function: ease;
         }
@@ -234,19 +268,123 @@
             cursor: pointer;
         }
 
+        #warning,#warning2{
+            height: 35px;
+            line-height: 20px;
+            color: rgb(246, 3, 3);
+            text-align: center;
+            margin-bottom: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 20px;
+            font-family: Montserrat;
+            font-weight: 600;
+            
+        }
+
+        
+
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+
+        /* #biggbossLogo{
+            width: 80px;
+            margin-left: 150px;
+        } */
+
+        .animate {
+        animation-duration: 0.75s;
+        animation-duration: 1s; 
+        animation-delay: 0.5s;
+        animation-name: animate-fade;
+        animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+        animation-fill-mode: backwards;
+        }
+
+        .animate.grow {
+        animation-name: animate-glow;
+        animation-timing-function: ease;
+        }
+        @keyframes animate-glow {
+        0% {
+            opacity: 0;
+            /* filter: brightness(3) saturate(3); */
+            transform: scale(0.8, 0.8);
+        }
+        100% {
+            opacity: 1;
+            /* filter: brightness(1) saturate(1); */
+            transform: scale(1, 1);
+        }
+        }
+
+        .delay-1 {
+        animation-delay: 0.5s;
+        }
+        .delay-2 {
+        animation-delay: 0.5s;
+        }
+        .delay-3 {
+        animation-delay: 0.5s;
+        }
+
+        .openOnClick{
+            position: absolute;
+            top: 70px;
+            right: 35px;
+            width: 277px;
+            /* height: 150px; */
+            color: black;
+            font-size: 20px;
+            text-align: center;
+            background-color: #eaff04;
+            font-family: Montserrat;
+            border-radius: 8px;
+            padding: 8px;
+            cursor: pointer;
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+            /* background-color: black; */
+        }
+
+        .openOnClick:hover{
+            background-color: #10f118;
+            transition-property: background-color;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        .openOnClick:not(:hover){
+            transition-property: background-color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
 
     </style>
   </head>
   <body>
 
     <nav>
-        <div><a href="BiggBoss.html">Voting Panel</a></div>
+        <div><a href="BiggBoss.html">Bigg Boss Voting Panel</a></div>
         <div><a href="guidelines.html">Guidelines</a></div>
-        <div><a href="">About the Platform</a></div>
+        <div><a href="FullMode.html">Voting Nation</a></div>
+        <!-- <img id="biggbossLogo" src="biggboss3.png"/> -->
+        <div id="adminbutton" onclick="something()">
+            Admin Rights
+        </div>
+        <div id="openOnClick" onclick="secondLogin()"></div>
     </nav>
     
-    <div id="main" class="main">
-        <div id="container" class="container">
+    <div id="main" class="main animate">
+        <div id="container1" class="container animate grow delay-1">
         <img class="imagehd"  src="nimrit kaur2.jpeg" />
 
         <h2 class="heading">Nimrit Kaur</h2>
@@ -255,7 +393,7 @@
             Nimrit Kaur Ahluwalia, known professionally as Nimrit Ahluwalia, is an Indian actress who primarily works in Hindi television. Ahluwalia won Femina Miss Manipur and was among the top 12 of Femina Miss India 2018
         </p>
         <div class="progress-bar">
-            <div class="progress" style="width: 57%"> 11385 </div>
+            <div class="progress" id="Nimrit Kaur" style="width: 57%"> </div>
         </div>
         <div id="voteNimrit" onclick="redirectFunction('Nimrit Kaur')" class="voteButton">
             Vote Nimrit Kaur
@@ -263,7 +401,7 @@
     </div>
         
 
-        <div class="container">
+        <div id="container2" class="container animate grow delay-2">
         <img class="imagehd"  src="abdu.jpg" />
         
         <h2 class="heading">Abdu Rozik</h2>
@@ -272,7 +410,7 @@
             Muhammadroziqi Savriqul, known professionally as Abdu Rozik, is a Tajikistani singer.Rozik participated in the Indian reality show Bigg Boss 16 on Colors TV. Rozik has dwarfism caused by an untreated case of childhood rickets.
         </p>
         <div class="progress-bar">
-            <div class="progress" style="width: 21%"> 4568 </div>
+            <div class="progress" id="Abdu Rozik" style="width: 21%">  </div>
         </div>
         <div id="voteAbdu" onclick="redirectFunction('Abdu Rozik')"  class="voteButton">
             Vote Abdu Rozik
@@ -281,7 +419,7 @@
 
         
         
-        <div class="container">
+        <div id="container3" class="container animate grow delay-3">
         <img class="imagehd" src="ankitgupta2.jpg" />
         
         <h2 class="heading">Ankit Gupta</h2>
@@ -290,14 +428,14 @@
             Ankit Gupta is an Indian actor who is known for working in Hindi television. He is best known for his role as Fateh Singh Virk in Colors TV's Udaariyaan. In 2022, he appeared in Bigg Boss 16 as a contestant.
         </p>
         <div class="progress-bar">
-            <div class="progress" style="width: 36%"> 6259 </div>
+            <div class="progress" id="Ankit Gupta" style="width: 36%">  </div>
         </div>
         <div id="voteAnkit" onclick="redirectFunction('Ankit Gupta')"  class="voteButton">
             Vote Ankit Gupta
         </div>
     </div>
 
-        <div class="container">
+        <div id="container4" class="container animate grow delay-1">
         <img class="imagehd"  src="priyanka2.jpg" />
         
         <h2 class="heading">Priyanka</h2>
@@ -306,14 +444,14 @@
             Priyanka Chahar Choudhary was born on 13 August 1996 in Jaipur, Rajasthan, India. She is an actress, known for Udaariyaan (2021) and Gathbandhan (2019)
         </p>
         <div class="progress-bar">
-            <div class="progress" style="width: 45%"> 7925 </div>
+            <div class="progress" id="Priyanka Chaudhary" style="width: 45%">  </div>
         </div>
         <div id="votePriyanka" onclick="redirectFunction('Priyanka Chaudhary')" class="voteButton">
             Vote Priyanka
         </div>
     </div>
 
-        <div class="container">
+        <div id="container5" class="container animate grow delay-2">
             <img class="imagehd"  src="MC-Stan2.jpg" />
             
             <h2 class="heading">MC Stan</h2>
@@ -322,7 +460,7 @@
                 MC Stan is a well-known rapper who has dominated the Internet with his incredible rhymes. His tunes are really popular among indian chhapri teens.
             </p>
             <div class="progress-bar">
-                <div  id="MC Stan" class="progress" style="width: 18%"> 4142 </div>
+                <div  id="MC Stan"  class="progress" style="width: 18%">  </div>
             </div>
             <div id="voteMc" onclick="redirectFunction('MC Stan')" class="voteButton">
                 Vote MC Stan
@@ -330,7 +468,7 @@
         </div>
 
 
-        <div class="container">
+        <div id="container6" class="container animate grow delay-3">
             <img class="imagehd"  src="tinadatta.jpg" />
             
             <h2 class="heading">Tina Datta</h2>
@@ -339,16 +477,16 @@
                 Tina Datta is an Indian actress known for her work in Hindi television. She rose to fame after portraying Ichcha in the drama series Uttaran.
             </p>
             <div class="progress-bar">
-                <div  id="Tina Datta" class="progress" style="width: 30%"> 5526 </div>
+                <div  id="Tina Datta" class="progress" style="width: 30%">  </div>
             </div>
-            <div id="voteMc" onclick="redirectFunction('Tina Datta')" class="voteButton">
+            <div id="voteTina" onclick="redirectFunction('Tina Datta')" class="voteButton">
                 Vote Tina Datta
             </div>
         </div>
 
 
 
-        <div class="container">
+        <div id="container7" class="container animate grow delay-1">
             <img class="imagehd"  src="manya singh.jpeg" />
             
             <h2 class="heading">Manya Singh</h2>
@@ -357,52 +495,301 @@
                 Manya Singh, the first runner-up in the Miss India 2020 contest, triumphed over the other candidates. She's a girl with beauty and brain.
             </p>
             <div class="progress-bar">
-                <div  id="Manya Singh" class="progress" style="width: 54%"> 10585 </div>
+                <div  id="Manya Singh" class="progress" style="width: 54%">  </div>
             </div>
-            <div id="voteMc" onclick="redirectFunction('Manya Singh')" class="voteButton">
+            <div id="voteManya" onclick="redirectFunction('Manya Singh')" class="voteButton">
                 Vote Manya Singh
             </div>
         </div>
 
 
 
-        <div class="container">
+        <div id="container8" class="container animate grow delay-2">
             <img class="imagehd"  src="Archana-Gautam.jpg" />
-            
             <h2 class="heading">Archana Gautam</h2>
             
             <p class="text">
                 Archana Gautam is an Indian politician, actress, model and beauty pageant title holder, who won Miss Bikini India 2018 represented India at Miss Cosmos World 2018
             </p>
             <div class="progress-bar">
-                <div  id="Archana Gautam" class="progress" style="width: 42%"> 8258 </div>
+                <div  id="Archana Gautam" class="progress" style="width: 42%">  </div>
             </div>
-            <div id="voteMc" onclick="redirectFunction('Archana Gautam')" class="voteButton">
+            <div id="voteArchana" onclick="redirectFunction('Archana Gautam')" class="voteButton">
                 Vote Archana Gautam
             </div>
         </div>
 
-
-
-
-
-
     </div>
     <div id="outerContainer"></div>
     <div id="outerContainer2"></div>
+    <div id="outerContainer3"></div>
+
+    
 
 </body>
 <script>
 
+    let openOnClick = document.getElementById('openOnClick');
+
+
+    function something(){
+            if(voteNimrit.classList.contains('voteButton') ){
+                if(openOnClick.classList.contains('openOnClick')){
+                // openOnClick.style.display='inline'
+                openOnClick.classList.remove("openOnClick");
+                openOnClick.innerHTML =``;
+                }
+                else{
+                    openOnClick.style.display='inline'
+                    openOnClick.classList.add("openOnClick");
+                    openOnClick.innerHTML =`Login as an Admin`;
+                }
+            }
+            else if (voteNimrit.classList.contains('voteButton2')){
+                if(openOnClick.classList.contains('openOnClick')){
+                openOnClick.classList.remove("openOnClick");
+                openOnClick.innerHTML = ``;
+                }
+                else{
+                    openOnClick.classList.add("openOnClick");
+                    openOnClick.innerHTML = `Logout as Admin`;
+                }
+            }
+
+        
+    }
+
+
+    let NimritKaur = document.getElementById('Nimrit Kaur')
+    let AbduRozik = document.getElementById('Abdu Rozik')
+    let AnkitGupta = document.getElementById('Ankit Gupta')
+    let PriyankaChaudhary = document.getElementById('Priyanka Chaudhary')
+    let MCStan = document.getElementById('MC Stan')
+    let TinaDatta = document.getElementById('Tina Datta')
+    let ManyaSingh = document.getElementById('Manya Singh')
+    let ArchanaGautam = document.getElementById('Archana Gautam')
+
+
+    let container1=document.getElementById('container1');
+    let container2=document.getElementById('container2');
+    let container3=document.getElementById('container3');
+    let container4=document.getElementById('container4');
+    let container5=document.getElementById('container5');
+    let container6=document.getElementById('container6');
+    let container7=document.getElementById('container7');
+    let container8=document.getElementById('container8');
+
+    let score1 = 11385;
+    let score2 = 4568;
+    let score3 = 6259;
+    let score4 = 7925;
+    let score5 = 4142;
+    let score6 = 5226;
+    let score7 = 10586;
+    let score8 = 8258;
+
+    NimritKaur.innerHTML=`${score1}`;
+    AbduRozik.innerHTML=`${score2}`;
+    AnkitGupta.innerHTML=`${score3}`;
+    PriyankaChaudhary.innerHTML=`${score4}`;
+    MCStan.innerHTML=`${score5}`;
+    TinaDatta.innerHTML=`${score6}`;
+    ManyaSingh.innerHTML=`${score7}`;
+    ArchanaGautam.innerHTML=`${score8}`;
+
+    let newContainer = document.createElement("div");
     
     let container = document.getElementById("container");
     let main = document.getElementById("main");
     let outerContainer= document.getElementById("outerContainer");
     let outerContainer2= document.getElementById("outerContainer2");
+    let outerContainer3= document.getElementById("outerContainer3");
+
+    let voteNimrit = document.getElementById('voteNimrit')
+    let voteAbdu = document.getElementById('voteAbdu')
+    let voteAnkit = document.getElementById('voteAnkit')
+    let votePriyanka = document.getElementById('votePriyanka')
+    let voteMc = document.getElementById('voteMc')
+    let voteTina = document.getElementById('voteTina')
+    let voteManya = document.getElementById('voteManya')
+    let voteArchana = document.getElementById('voteArchana')
+
+    function secondLogin(){
+        if(voteNimrit.classList.contains('voteButton')){
+            voteNimrit.classList.remove('voteButton');
+            voteNimrit.classList.add('voteButton2');
+            voteNimrit.innerHTML = "Eliminate Nimrit Kaur";
+
+            voteAbdu.classList.remove('voteButton');
+            voteAbdu.classList.add('voteButton2');
+            voteAbdu.innerHTML = "Eliminate Abdu Rozik";
+            
+            voteAnkit.classList.remove('voteButton');
+            voteAnkit.classList.add('voteButton2');
+            voteAnkit.innerHTML = "Eliminate Ankit Gupta";
+
+            votePriyanka.classList.remove('voteButton');
+            votePriyanka.classList.add('voteButton2');
+            votePriyanka.innerHTML = "Eliminate Priyanka Chaudhary";
+
+            voteMc.classList.remove('voteButton');
+            voteMc.classList.add('voteButton2');
+            voteMc.innerHTML = "Eliminate MC Stan ";
+            
+            voteTina.classList.remove('voteButton');
+            voteTina.classList.add('voteButton2');
+            voteTina.innerHTML = "Eliminate Tina Datta";
+            
+            voteManya.classList.remove('voteButton');
+            voteManya.classList.add('voteButton2');
+            voteManya.innerHTML = "Eliminate Manya Singh";
+            
+            voteArchana.classList.remove('voteButton');
+            voteArchana.classList.add('voteButton2');
+            voteArchana.innerHTML = "Eliminate Archana Gautam";
+
+            //New Container Created
+
+            // main.appendChild(newContainer)
+            // newContainer.classList.add('containernew');
+
+            openOnClick.classList.remove("openOnClick");
+            openOnClick.innerHTML =``;
+            main.style.display = "none";
+            outerContainer3.style.display='inline'
+            outerContainer3.innerHTML = `
+            <div id='containervote'>
+            <h1>
+            Login as Admin 
+            </h1>
+            <form id="personal-info-form">
+                <label for="first-name">UserName</label>
+                <input type="text" id="username" class="inputs" name="password" required>
+                <!-- <div id="first-name-error" class="error-message"></div> -->
+
+                <label for="last-name">Password</label>
+                <input type="password" id="password" class="inputs" name="password" required>
+                <!-- <div id="last-name-error" class="error-message"></div> -->
+            </form>
+            <div id="warning2">
+                    
+            </div>
+            <div id="submit" onclick="wapisAsAdmin()" >
+                Login
+            </div>
+            </div>`;
+        }
+        else if (voteNimrit.classList.contains('voteButton2')){
+            openOnClick.innerHTML=`Login as an Admin`;
+            openOnClick.classList.remove("openOnClick");
+            openOnClick.style.display='none'
+
+            voteNimrit.classList.remove('voteButton2');
+            voteNimrit.classList.add('voteButton');
+            voteNimrit.innerHTML = "Vote Nimrit Kaur";
+
+            voteAbdu.classList.remove('voteButton2');
+            voteAbdu.classList.add('voteButton');
+            voteAbdu.innerHTML = "Vote Abdu Rozik";
+            
+            voteAnkit.classList.remove('voteButton2');
+            voteAnkit.classList.add('voteButton');
+            voteAnkit.innerHTML = "Vote Ankit Gupta";
+
+            votePriyanka.classList.remove('voteButton2');
+            votePriyanka.classList.add('voteButton');
+            votePriyanka.innerHTML = "Vote Priyanka Chaudhary";
+
+            voteMc.classList.remove('voteButton2');
+            voteMc.classList.add('voteButton');
+            voteMc.innerHTML = "Vote MC Stan ";
+            
+            voteTina.classList.remove('voteButton2');
+            voteTina.classList.add('voteButton');
+            voteTina.innerHTML = "Vote Tina Datta";
+            
+            voteManya.classList.remove('voteButton2');
+            voteManya.classList.add('voteButton');
+            voteManya.innerHTML = "Vote Manya Singh";
+            
+            voteArchana.classList.remove('voteButton2');
+            voteArchana.classList.add('voteButton');
+            voteArchana.innerHTML = "Vote Archana Gautam";
+
+            outerContainer3.innerHTML=``;
+            
+        }
+        }
+
+    function wapisAsAdmin(){
+        let username = document.getElementById("username").value;
+        let username1 = document.getElementById("username");
+        let password = document.getElementById("password").value;
+        let password1 = document.getElementById("password");
+        let warningDiv2 = document.getElementById("warning2");
+
+
+        if (username===''){
+            warningDiv2.innerHTML ="Please Fill your details"
+            username1.style.border ='2px solid red'
+        }
+        else{
+            username1.style.border ='none';
+        }
+        if(password===''){
+            password1.style.border = '2px solid red';
+            warningDiv2.innerHTML ="Please Fill your details"
+
+        }
+        else{
+            password1.style.border ='none';
+        }
+        if(username==='Parth99' && password==='parthgera'){
+            outerContainer3.style.display = "none";
+            main.style.display ='grid';
+        }
+        else if (username!=='' && password!==''){
+            warningDiv2.innerHTML = 'Incorrect UserName or Password';
+        }
+    }
+
     function redirectFunction(parameter){
         let display = parameter;
+        if(voteNimrit.classList.contains('voteButton') || voteAbdu.classList.contains('voteButton') || voteAnkit.classList.contains('voteButton') || votePriyanka.classList.contains('voteButton') || voteMc.classList.contains('voteButton') || voteTina.classList.contains('voteButton') || voteManya.classList.contains('voteButton') || voteArchana.classList.contains('voteButton')){
         main.style.display = "none";
         outerContainer.style.display="inline";
+        if (display === 'Nimrit Kaur'){
+            score1+=1;
+            NimritKaur.innerHTML=`${score1}`;
+        }
+        else if (display === 'Abdu Rozik'){
+            score2+=1;
+            AbduRozik.innerHTML=`${score2}`;
+        }
+        else if (display === 'Ankit Gupta'){
+            score3+=1;
+            AnkitGupta.innerHTML=`${score3}`;
+        }
+        else if (display === 'Priyanka Chaudhary'){
+            score4+=1;
+            PriyankaChaudhary.innerHTML=`${score4}`;
+        }
+        else if (display === 'MC Stan'){
+            score5+=1;
+            MCStan.innerHTML=`${score5}`;
+        }
+        else if (display === 'Tina Datta'){
+            score6+=1;
+            TinaDatta.innerHTML=`${score6}`;
+        }
+        else if (display === 'Manya Singh'){
+            score7+=1;
+            ManyaSingh.innerHTML=`${score7}`;
+        }
+        else if (display === 'Archana Gautam'){
+            score8+=1;
+            ArchanaGautam.innerHTML=`${score8}`;
+        }
         outerContainer.innerHTML = `<div id="containervote">
         <h1>Personal Information Form</h1>
         <form id="personal-info-form">
@@ -419,7 +806,7 @@
           <!-- <div id="email-error" class="error-message"></div> -->
 
           <label for="phone">Phone:</label>
-        <input type="tel" id="phone" class="inputs" name="phone" required>
+        <input type="number" id="phone" class="inputs" name="phone" required>
         <!-- <div id="phone-error" class="error-message"></div> -->
 
         <label for="city">City:</label>
@@ -461,44 +848,144 @@
         <!-- <div id="state-error" class="error-message"></div> -->
         
         </form>
+        <div id="warning">
+                
+        </div>
         <div id="submit" onclick="redirect()" >
             Vote ${display}
         </div>
     </div>`;
         
+    }
+    else{
+        if (display === 'Nimrit Kaur'){
+            container1.style.display="none";
+        }
+        else if (display === 'Abdu Rozik'){
+            container2.style.display="none";
+        }
+        else if (display === 'Ankit Gupta'){
+            container3.style.display="none";
+        }
+        else if (display === 'Priyanka Chaudhary'){
+            container4.style.display="none";
+        }
+        else if (display === 'MC Stan'){
+            container5.style.display="none";
+        }
+        else if (display === 'Tina Datta'){
+            container6.style.display="none";
+        }
+        else if (display === 'Manya Singh'){
+            container7.style.display="none";
+        }
+        else if (display === 'Archana Gautam'){
+            container8.style.display="none";
+        }
+    }
+
 
     }
 
     
     
+    
+    
+    
     function redirect(){
+        
+        let firstName = document.getElementById("first-name").value;
+        let firstName1 = document.getElementById("first-name");
+        let secondName = document.getElementById("last-name").value;
+        let secondName1 = document.getElementById("last-name");
+        let email = document.getElementById("email").value;
+        let email1 = document.getElementById("email");
+        let phone = document.getElementById("phone").value;
+        let phone1 = document.getElementById("phone");
+        let city = document.getElementById("city").value;
+        let city1 = document.getElementById("city");
+        let state1 = document.getElementById("state");
+        let state = state1.options[state1.selectedIndex].text;
+        let warningDiv = document.getElementById("warning");
+        let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        if (firstName===''  ){
+            warningDiv.innerHTML ="Please Fill your Name"
+            firstName1.style.border ='2px solid red'
+        }
+        else{
+            firstName1.style.border ='none';
+        }
+        if(secondName===''){
+            secondName1.style.border = '2px solid red';
+            warningDiv.innerHTML ="Please Fill your Name"
+
+        }
+        else{
+            secondName1.style.border ='none';
+        }
+        if(email.match(validRegex)){
+            email1.style.border ='none';
+        }
+        else{
+            email1.style.border = '2px solid red';
+            warningDiv.innerHTML ="Please Fill your email correctly"
+        }
+        if(phone===''){
+            phone1.style.border = '2px solid red';
+            warningDiv.innerHTML ="Please Fill your details"
+
+        }
+        else{
+            phone1.style.border ='none';
+        }
+        if(city===''){
+            city1.style.border = '2px solid red';
+            warningDiv.innerHTML ="Please Fill your details"
+
+        }
+        else{
+            city1.style.border ='none';
+        }
+        if(state==='Select State'){
+            state1.style.border = '2px solid red';
+            warningDiv.innerHTML ="Please Fill your details"
+
+        }
+        else{
+            state1.style.border ='none';
+        }
+        if(firstName!=='' && secondName!=='' && email.match(validRegex) && phone!=='' && city!=='' && state!=='Select State'){
         // let display = parameter;
+        let name = document.getElementById('submit').innerHTML;
+        console.log(name)
+        name=name.trim()
+        console.log(name)
+        let correctName=name.slice(5);
+        console.log(correctName)
         outerContainer.style.display="none";
+
         outerContainer2.style.display="inline"
         outerContainer2.innerHTML = `<div id="containervote">
-        <div class='thanks mainthanks'>
-            Thanks for voting.
-        </div>
-        <div class='thanks'>
-            Your vote will be counted after verification of your details.
-        </div>
-        <div id='continueButton' onclick="redirect2()">
-            Continue to Voting Panel
-        </div>
-    </div>`;
-
+            <div class='thanks mainthanks'>
+                Thanks for voting ${name.slice(5)}.
+            </div>
+            <div class='thanks'>
+                Your vote will be counted after verification of your details.
+            </div>
+            <div id='continueButton' onclick="redirect2()">
+                Continue to Voting Panel
+            </div>
+        </div>`;
+        }
     
     }
     function redirect2(){
         outerContainer2.style.display="none";
         main.style.display = "grid";
 
+
     }
-
-
-    
-
-    
 
 </script>
 </html>
