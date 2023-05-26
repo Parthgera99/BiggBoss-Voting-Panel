@@ -153,6 +153,19 @@
         margin-left: -30px;
       }
 
+      .inputnew{
+        width: 80%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 2px solid black;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        color: rgb(54, 54, 54);
+        font-family: Montserrat;
+        margin: 20px;
+        margin-bottom: 10px;
+      }
+
       .error-message {
         color: red;
         font-size: 14px;
@@ -568,6 +581,7 @@
     let TinaDatta = document.getElementById('Tina Datta')
     let ManyaSingh = document.getElementById('Manya Singh')
     let ArchanaGautam = document.getElementById('Archana Gautam')
+    
 
 
     let container1=document.getElementById('container1');
@@ -597,7 +611,6 @@
     ManyaSingh.innerHTML=`${score7}`;
     ArchanaGautam.innerHTML=`${score8}`;
 
-    let newContainer = document.createElement("div");
     
     let container = document.getElementById("container");
     let main = document.getElementById("main");
@@ -614,43 +627,177 @@
     let voteManya = document.getElementById('voteManya')
     let voteArchana = document.getElementById('voteArchana')
 
+    let collection2 = main.children;
     function secondLogin(){
         if(voteNimrit.classList.contains('voteButton')){
-            voteNimrit.classList.remove('voteButton');
-            voteNimrit.classList.add('voteButton2');
-            voteNimrit.innerHTML = "Eliminate Nimrit Kaur";
 
-            voteAbdu.classList.remove('voteButton');
-            voteAbdu.classList.add('voteButton2');
-            voteAbdu.innerHTML = "Eliminate Abdu Rozik";
+            let collection2 = document.querySelectorAll('.voteButton')
             
-            voteAnkit.classList.remove('voteButton');
-            voteAnkit.classList.add('voteButton2');
-            voteAnkit.innerHTML = "Eliminate Ankit Gupta";
+            // Array.prototype.map.call(collection2, element => {
+            //     let trial = element
+            //     trial.classList.remove('voteButton');
+            //     trial.classList.add('voteButton2');
+            //     trial.innerHTML=`Eliminate`;
+            // });
 
-            votePriyanka.classList.remove('voteButton');
-            votePriyanka.classList.add('voteButton2');
-            votePriyanka.innerHTML = "Eliminate Priyanka Chaudhary";
+            
 
-            voteMc.classList.remove('voteButton');
-            voteMc.classList.add('voteButton2');
-            voteMc.innerHTML = "Eliminate MC Stan ";
+            collection2.forEach(element=>{
+                let name = element.innerHTML.trim();
+                namelatest = name.slice(5);
+                element.classList.remove('voteButton')
+                element.classList.add('voteButton2')
+                element.innerHTML = `Eliminate ${namelatest}`
+            })
+
+            // voteNimrit.classList.remove('voteButton');
+            // voteNimrit.classList.add('voteButton2');
+            // voteNimrit.innerHTML = "Eliminate Nimrit Kaur";
+
+            // voteAbdu.classList.remove('voteButton');
+            // voteAbdu.classList.add('voteButton2');
+            // voteAbdu.innerHTML = "Eliminate Abdu Rozik";
             
-            voteTina.classList.remove('voteButton');
-            voteTina.classList.add('voteButton2');
-            voteTina.innerHTML = "Eliminate Tina Datta";
+            // voteAnkit.classList.remove('voteButton');
+            // voteAnkit.classList.add('voteButton2');
+            // voteAnkit.innerHTML = "Eliminate Ankit Gupta";
+
+            // votePriyanka.classList.remove('voteButton');
+            // votePriyanka.classList.add('voteButton2');
+            // votePriyanka.innerHTML = "Eliminate Priyanka Chaudhary";
+
+            // voteMc.classList.remove('voteButton');
+            // voteMc.classList.add('voteButton2');
+            // voteMc.innerHTML = "Eliminate MC Stan ";
             
-            voteManya.classList.remove('voteButton');
-            voteManya.classList.add('voteButton2');
-            voteManya.innerHTML = "Eliminate Manya Singh";
+            // voteTina.classList.remove('voteButton');
+            // voteTina.classList.add('voteButton2');
+            // voteTina.innerHTML = "Eliminate Tina Datta";
             
-            voteArchana.classList.remove('voteButton');
-            voteArchana.classList.add('voteButton2');
-            voteArchana.innerHTML = "Eliminate Archana Gautam";
+            // voteManya.classList.remove('voteButton');
+            // voteManya.classList.add('voteButton2');
+            // voteManya.innerHTML = "Eliminate Manya Singh";
+            
+            // voteArchana.classList.remove('voteButton');
+            // voteArchana.classList.add('voteButton2');
+            // voteArchana.innerHTML = "Eliminate Archana Gautam";
 
             //New Container Created
 
-            // main.appendChild(newContainer)
+            // main.innerHTML += `
+        
+            // <div id="container9" class="container animate grow delay-2">
+            //     <img class="imagehd" src="blank-image.png" /> 
+            //     <h2 class="heading">Name</h2>
+                
+            //     <p class="text">
+            //         <br>
+            //         <br>
+            //         Description
+            //         <br>
+            //         <br>
+            //         <br>
+            //     </p>
+            //     <div class="progress-bar">
+            //         <div  id="name" class="progress" style="width: 1%">  </div>
+            //     </div>
+            //     <div id="voteName"  class='voteButton2'>
+            //         Create New Card
+            //     </div>
+            // </div>`
+
+            main.appendChild(document.createElement('div'))
+            main.lastChild.classList.add('container')
+            main.lastChild.setAttribute('id','container9')
+            // id -  container9 
+            // class - container
+            
+            //image template
+            let image = document.createElement('img')
+            main.lastChild.appendChild(image)
+            // main.lastChild.lastChild.setAttribute('id','imagetemplate')
+            // let image = document.getElementById('imagetemplate')
+            image.classList.add('imagehd')
+            image.src = 'blank-image.png'
+
+            //input for name
+            let nameInput = document.createElement('input');
+            main.lastChild.appendChild(nameInput)
+            nameInput.classList.add('inputnew')
+            nameInput.placeholder='Enter Name'
+            
+            //input for description
+            let descriptionInput = document.createElement('input');
+            main.lastChild.appendChild(descriptionInput)
+            descriptionInput.classList.add('inputnew')
+            descriptionInput.placeholder='Enter Description'
+            
+            //input for image
+            let label = document.createElement('label');
+            main.lastChild.appendChild(label)
+            label.classList.add('inputnew')
+            label.innerHTML = `Select Image`
+            label.setAttribute('for','files')
+            
+            let imageInput = document.createElement('input')
+            main.lastChild.appendChild(imageInput)
+            imageInput.type='file'
+            imageInput.setAttribute('id','files')
+            imageInput.style.display='none'
+            
+            
+            
+            // main.lastChild.lastChild.addEventListener('change', function(event){
+            //     let fileName = main.lastChild.lastChild.files[0].name;
+            // })
+
+
+            //button for saving the progress
+            let createButton = document.createElement('div')
+            main.lastChild.appendChild(createButton)
+            createButton.innerHTML=`Create New Voting ID`
+            createButton.classList.add('voteButton2')
+
+
+            //button functionality
+            createButton.addEventListener('click',function(){
+                let score9 = 0;
+                let displayDiv = document.createElement('div');
+                displayDiv.classList.add('container');
+                let fileName = document.querySelector('#files').files[0].name;
+                let nameOfContestant = nameInput.value;
+                let descriptionOfContestant = descriptionInput.value;
+                displayDiv.innerHTML = `
+                <img class="imagehd"  src="${fileName}" />
+                <h2 class="heading">${nameOfContestant}</h2>
+                
+                <p class="text">
+                    ${descriptionOfContestant}
+                </p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 1%">  ${score9} </div>
+                </div>
+                <div onclick="redirectFunction('${nameOfContestant}')" id='${nameOfContestant}' class="voteButton2">
+                    Eliminate ${nameOfContestant}
+                </div>`
+
+                //image fixing
+                // image.src = fileName;
+                //Name Fixing
+
+                nameInput.value='';
+                descriptionInput.value='';
+
+                main.insertBefore(displayDiv,document.getElementById('container9'));
+
+            })
+
+
+
+            // main.lastChild.lastChild.placeholder='Select Image'
+
+            
+            // main.lastChild.lastChild.classList.add('heading');
             // newContainer.classList.add('containernew');
 
             openOnClick.classList.remove("openOnClick");
@@ -684,39 +831,58 @@
             openOnClick.classList.remove("openOnClick");
             openOnClick.style.display='none'
 
-            voteNimrit.classList.remove('voteButton2');
-            voteNimrit.classList.add('voteButton');
-            voteNimrit.innerHTML = "Vote Nimrit Kaur";
+            //for each on each element
+            let collection = document.querySelectorAll('.voteButton2')
+            // collection.children.forEach(element => {
+            //     element.classList.remove('voteButton2');
+            //     element.classList.add('voteButton');
+            //     element.innerHTML=`Vote`
+            // });
 
-            voteAbdu.classList.remove('voteButton2');
-            voteAbdu.classList.add('voteButton');
-            voteAbdu.innerHTML = "Vote Abdu Rozik";
-            
-            voteAnkit.classList.remove('voteButton2');
-            voteAnkit.classList.add('voteButton');
-            voteAnkit.innerHTML = "Vote Ankit Gupta";
+            Array.prototype.forEach.call(collection, element => {
+                let name = element.innerHTML.trim();
+                namelatest = name.slice(10);
+                element.classList.remove('voteButton2');
+                element.classList.add('voteButton');
+                element.innerHTML=`Vote ${namelatest}`
+            });
 
-            votePriyanka.classList.remove('voteButton2');
-            votePriyanka.classList.add('voteButton');
-            votePriyanka.innerHTML = "Vote Priyanka Chaudhary";
 
-            voteMc.classList.remove('voteButton2');
-            voteMc.classList.add('voteButton');
-            voteMc.innerHTML = "Vote MC Stan ";
+            // voteNimrit.classList.remove('voteButton2');
+            // voteNimrit.classList.add('voteButton');
+            // voteNimrit.innerHTML = "Vote Nimrit Kaur";
+
+            // voteAbdu.classList.remove('voteButton2');
+            // voteAbdu.classList.add('voteButton');
+            // voteAbdu.innerHTML = "Vote Abdu Rozik";
             
-            voteTina.classList.remove('voteButton2');
-            voteTina.classList.add('voteButton');
-            voteTina.innerHTML = "Vote Tina Datta";
+            // voteAnkit.classList.remove('voteButton2');
+            // voteAnkit.classList.add('voteButton');
+            // voteAnkit.innerHTML = "Vote Ankit Gupta";
+
+            // votePriyanka.classList.remove('voteButton2');
+            // votePriyanka.classList.add('voteButton');
+            // votePriyanka.innerHTML = "Vote Priyanka Chaudhary";
+
+            // voteMc.classList.remove('voteButton2');
+            // voteMc.classList.add('voteButton');
+            // voteMc.innerHTML = "Vote MC Stan ";
             
-            voteManya.classList.remove('voteButton2');
-            voteManya.classList.add('voteButton');
-            voteManya.innerHTML = "Vote Manya Singh";
+            // voteTina.classList.remove('voteButton2');
+            // voteTina.classList.add('voteButton');
+            // voteTina.innerHTML = "Vote Tina Datta";
             
-            voteArchana.classList.remove('voteButton2');
-            voteArchana.classList.add('voteButton');
-            voteArchana.innerHTML = "Vote Archana Gautam";
+            // voteManya.classList.remove('voteButton2');
+            // voteManya.classList.add('voteButton');
+            // voteManya.innerHTML = "Vote Manya Singh";
+            
+            // voteArchana.classList.remove('voteButton2');
+            // voteArchana.classList.add('voteButton');
+            // voteArchana.innerHTML = "Vote Archana Gautam";
 
             outerContainer3.innerHTML=``;
+
+            main.lastChild.style.display='none';
             
         }
         }
@@ -751,9 +917,22 @@
         else if (username!=='' && password!==''){
             warningDiv2.innerHTML = 'Incorrect UserName or Password';
         }
+
+
     }
 
     function redirectFunction(parameter){
+        let name = document.getElementById(parameter).textContent;
+        let namelatest = name.slice(5);
+
+
+        let xxx = document.getElementsByClassName('progress')
+        let length = xxx.length;
+        let item = xxx.item(length-1);
+        let item1 = item.textContent;
+        let number = parseInt(item1);
+
+        
         let display = parameter;
         if(voteNimrit.classList.contains('voteButton') || voteAbdu.classList.contains('voteButton') || voteAnkit.classList.contains('voteButton') || votePriyanka.classList.contains('voteButton') || voteMc.classList.contains('voteButton') || voteTina.classList.contains('voteButton') || voteManya.classList.contains('voteButton') || voteArchana.classList.contains('voteButton')){
         main.style.display = "none";
@@ -761,6 +940,9 @@
         if (display === 'Nimrit Kaur'){
             score1+=1;
             NimritKaur.innerHTML=`${score1}`;
+        }
+        else if(display === namelatest){
+            item.innerHTML = `${number+1}`;
         }
         else if (display === 'Abdu Rozik'){
             score2+=1;
