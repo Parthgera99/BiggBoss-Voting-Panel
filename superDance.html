@@ -1,0 +1,314 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:opsz,wght@9..144,600&family=League+Spartan:wght@700&family=Lobster&family=Montserrat&family=Noto+Serif:wght@700&family=Tapestry&display=swap" rel="stylesheet">
+    <title>Super Dance 4 Voting Panel</title>
+    <style>
+
+        body{
+            background: url(backgroundDoodle3.jpg);
+            color: white;
+        }
+
+        .main {
+            margin-left: 50px;
+            text-align: center;
+            display: grid;
+            grid: auto / auto auto auto;
+            grid-template-columns: repeat(3, 1fr); 
+        }
+
+        .container {
+            background-color: white;
+            color: black;
+            height: fit-content;
+            width: 280px;
+            margin: 50px;
+            margin-top: 70px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .containernew {
+            background-color: white;
+            color: black;
+            height: 550px;
+            width: 280px;
+            margin: 50px;
+            margin-top: 70px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .heading , .text{
+            margin: 20px;
+        }
+        .heading{
+            font-family: Montserrat;
+        }
+
+        .imagehd{
+            width: 280px;
+        }
+
+        .voteButton{
+            padding: 10px 15px 10px 15px;
+            background-color: rgb(0, 0, 0);
+            margin: 20px;
+            border-radius: 10px;
+            color: rgb(4, 255, 0);
+            text-align: center;
+            cursor: pointer;
+            font-family: Montserrat;
+        }
+
+        nav{
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr 2fr ;
+            font-size: 25px;
+            font-family: Montserrat;
+        }
+
+        #adminbutton{
+            text-align: end;
+            cursor: pointer;
+        }
+
+        
+        a{
+            color: #10f118;
+            text-decoration: none;
+            justify-content: left;
+            padding: 10px;
+            border-radius: 5px;
+            
+        }
+
+        a:hover{
+            /* text-decoration: underline; */
+            text-shadow: 5px 5px 10px rgb(2, 255, 44);
+            color: #eaff04;
+            transition-property: background-color,color, width, height , text-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        a:not(:hover){
+            transition-property: background-color,color, width, height , text-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        .progress-bar {
+            width: 80%;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            display: relative;
+            height: 20px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .progress {
+            color: black;
+            height: 100%;
+            background-color: #10f118;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        .animate {
+        animation-duration: 0.75s;
+        animation-duration: 1s; 
+        animation-delay: 0.5s;
+        animation-name: animate-fade;
+        animation-timing-function: cubic-bezier(.26,.53,.74,1.48);
+        animation-fill-mode: backwards;
+        }
+
+        .animate.grow {
+        animation-name: animate-glow;
+        animation-timing-function: ease;
+        }
+        @keyframes animate-glow {
+        0% {
+            opacity: 0;
+            /* filter: brightness(3) saturate(3); */
+            transform: scale(0.8, 0.8);
+        }
+        100% {
+            opacity: 1;
+            /* filter: brightness(1) saturate(1); */
+            transform: scale(1, 1);
+        }
+        }
+
+        .delay-1 {
+        animation-delay: 0.2s;
+        }
+        .delay-2 {
+        animation-delay: 0.5s;
+        }
+        .delay-3 {
+        animation-delay: 0.8s;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div><a href="IndianIdol.html">Indian Idol Voting Panel</a></div>
+        <div><a href="guidelines.html">Guidelines</a></div>
+        <div><a href="index.html">Voting Nation</a></div>
+        <div id="adminbutton">
+            Admin Rights
+        </div>
+    </nav>
+    
+    <div id="main" class="main animate">
+        <div id="container1" class="container animate grow delay-1">
+        <img class="imagehd"  src="d1.jpg" />
+
+        <h2 class="heading">Florina Gogoi</h2>
+
+        <p class="text">
+            Florina Gogoi was born on Wednesday, 24 September 2014 (age 7 years; as of 2021) in Assam. [1] Her zodiac sign is Libra. She studies at Carmel School, Assam. To pursue her dance coaching, she goes to Moonwalk Dance Academy in Assam.
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 34%"> 6235 </div>
+        </div>
+        <div id="voteFlorina" class="voteButton">
+            Vote Florina Gogoi
+        </div>
+    </div>
+        
+
+        <div id="container2" class="container animate grow delay-2">
+        <img class="imagehd"  src="d6.jpg" />
+        
+        <h2 class="heading">Spriha Kashyap</h2>
+        
+        <p class="text">
+            Spriha Rishi Kashyap's house is in Morigaon district of Assam. The high level of beautiful dance performed by Spriha Rani Kashyap at the age of 7 and younger has taken the public by surprise. Spriha rishi Kashyap is studying dance under dilip dance academy.
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 21%"> 5138 </div>
+        </div>
+        <div id="voteSpriha"  class="voteButton">
+            Vote Spriha Rishi Kashyap
+        </div>
+    </div>
+
+        
+        
+        <div id="container3" class="container animate grow delay-3">
+        <img class="imagehd" src="d3.jpg" />
+        
+        <h2 class="heading">Esha Mishra</h2>
+        
+        <p class="text">
+            Esha Mishra is popularly known from the dance reality show Super Dancer 4. Being just 8 years old, she has stunned everyone including the judges of the show with her outstanding performance.
+
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 46%"> 7435 </div>
+        </div>
+        <div id="voteEsha"  class="voteButton">
+            Vote Esha Mishra
+        </div>
+    </div>
+
+        <div id="container4" class="container animate grow delay-1">
+        <img class="imagehd"  src="d4.jpg" />
+        
+        <h2 class="heading">Amit Kumar</h2>
+        
+        <p class="text">
+            Amit Kumar is an Indian dancer. He is best known as contestant of Super Dancer 4. Super Dancer 4 is a dance reality show, premiered on March 27, Sony TV. He has been paired with choreographer Amardeep Singh, known for Robotics Dancing.
+        </p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 15%"> 946 </div>
+        </div>
+        <div id="voteAmit" class="voteButton">
+            Vote Amit Kumar
+        </div>
+    </div>
+
+        <div id="container5" class="container animate grow delay-2">
+            <img class="imagehd"  src="d5.jpg" />
+            
+            <h2 class="heading">Pari Tamang</h2>
+            
+            <p class="text">
+                Pari Tamang is 8 years old Indian dancer who made appearance on a TV reality show of Sony TV, Super Dancer 4. The show is based on dance and Pari do dance performances there. She is from Siliguri, Indian and has started dance training from a very little age.
+            </p>
+            <div class="progress-bar">
+                <div  class="progress" style="width: 31%"> 5487 </div>
+            </div>
+            <div id="votePari" class="voteButton">
+                Vote Pari Tamang
+            </div>
+        </div>
+
+
+        <div id="container6" class="container animate grow delay-3">
+            <img class="imagehd"  src="d2.jpg" />
+            
+            <h2 class="heading">Neerja Tiwari</h2>
+            
+            <p class="text">
+                Neerja Tiwari is an Indian dancer. She is best known as a contestant of Super Dancer 4. Super Dancer 4 is a dance reality show, premiered on March 27, Sony TV. She has been paired up with choreographer Bhawna Khanduja.
+            </p>
+            <div class="progress-bar">
+                <div  class="progress" style="width: 24%"> 4486 </div>
+            </div>
+            <div id="voteNeerja" class="voteButton">
+                Vote Neerja Tiwari
+            </div>
+        </div>
+
+
+
+        <div id="container7" class="container animate grow delay-1">
+            <img class="imagehd"  src="d7.jpg" />
+            
+            <h2 class="heading">Pratiti Das</h2>
+            
+            <p class="text">
+                Pratiti Das is an Indian dancer. She is best known as contestant of Super Dancer 4. Super Dancer 4 is a dance reality show, premiered on March 27, Sony TV. She has been paired up with choreographer Shweta Warrier, known for street-o-classical, a Bharatnatyam conference with freestyle Western steps.
+            </p>
+            <div class="progress-bar">
+                <div  class="progress" style="width: 48%"> 10402 </div>
+            </div>
+            <div id="votePratiti" class="voteButton">
+                Vote Pratiti Das
+            </div>
+        </div>
+
+
+
+        <div id="container8" class="container animate grow delay-2">
+            <img class="imagehd"  src="d8.jpg" />
+            <h2 class="heading">Prithviraj Kongari</h2>
+            
+            <p class="text">
+                Prithviraj Kongari aka Prithviraj Ashok Kongari by his real name9 is a 9-year-old god gifted dancer born on 15 April 2012 in Belgaum a small city of Karnataka.  Before his selection in super dancer 4, Prithviraj was a former student of Xcentrix Dance studio operated by Dancer/Choreographer Kiran Kamble.
+            </p>
+            <div class="progress-bar">
+                <div  class="progress" style="width: 28%"> 3252 </div>
+            </div>
+            <div id="votePrithviraj" class="voteButton">
+                Vote Prithviraj Kongari
+            </div>
+        </div>
+    </div>
+</body>
+</html>

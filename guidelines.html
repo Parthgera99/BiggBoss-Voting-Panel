@@ -93,15 +93,49 @@
             font-size: 18px;
         }
 
+        nav{
+            margin-left: 80px;
+            margin-right: 80px;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 2fr 1fr 2fr 1fr ;
+            font-size: 25px;
+            font-family: Montserrat;
+        }
+
+        a{
+            color: #10f118;
+            text-decoration: none;
+            justify-content: left;
+            padding: 10px;
+            border-radius: 5px;
+            
+        }
+
+        a:hover{
+            /* text-decoration: underline; */
+            text-shadow: 5px 5px 10px rgb(2, 255, 44);
+            color: #eaff04;
+            transition-property: background-color,color, width, height , text-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        a:not(:hover){
+            transition-property: background-color,color, width, height , text-shadow;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
 
     </style>
 </head>
 <body>
 
     <nav>
-        <div><a href="index.html">Voting Panel</a></div>
+        <div><a href="BiggBoss.html">Bigg Boss Voting Panel</a></div>
         <div><a href="guidelines.html">Guidelines</a></div>
-        <div><a href="">About the Platform</a></div>
+        <div><a href="index.html">Voting Nation</a></div>
     </nav>
 
 
